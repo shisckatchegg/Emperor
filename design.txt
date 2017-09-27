@@ -1,0 +1,26 @@
+define UI space on screen:
+	-conversations with vassals next to  vassal/player
+	-minimal UI on top showing ABSTRACT resources: respect and...
+	-every other resource must be shown by calling the appropriate vassal/player
+	
+vassals:
+	Main way to interact with the world: interface
+	
+	Types:
+		Chief Guard: security, default protects, imprisons, executes, scouts, arranges armies.
+		Butler: taxes, resources, budget, family state.
+		Priest: perform ceremony religion/respect, omens? 
+		Messenger: communicates to other towns
+		Architect: builds things
+	Left click: talk
+	Right click: appoint normal noble to position / demote position holder
+	Keyboard button: shout, no need to talk to specific vassal, shortcut (maybe can be edited personally: so that a player can assign an action to a certain button and if certain vassal is available perform it)
+	
+Resources:
+	Respect
+	This resources can belong to the state or to the player, if they belong to the player, increase respect, personal guard?.
+	State: keep vassals and landed vassals happy, redistribution. Raise armies, build infrastructure.
+	Gold/Silver
+	Food
+	Wood
+	Stone
