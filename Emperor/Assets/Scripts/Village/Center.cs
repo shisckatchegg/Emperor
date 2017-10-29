@@ -10,6 +10,7 @@ public class Center : MonoBehaviour {
 
 	public Transform VillageDepot;
 	public Transform VillageHouses;
+	public Transform VlillageFarms;
 
 	public float ResourceRadius = 20.0f;
 
@@ -29,10 +30,10 @@ public class Center : MonoBehaviour {
 		Transform leadVillager = null;
 		foreach(Transform villagerTransform in Villagers)
 		{
-			Stats script = villagerTransform.GetComponent<Stats>();
-			if(highestPrestige < script.Prestige)
+			//Stats script = villagerTransform.GetComponent<Stats>();
+			//if(highestPrestige < script.Prestige)
 			{
-				highestPrestige = script.Prestige;
+			//	highestPrestige = script.Prestige;
 				leadVillager = villagerTransform;
 			}
 		}
@@ -44,6 +45,5 @@ public class Center : MonoBehaviour {
 	{
 
 	}
-
-	private void
+	
 }
