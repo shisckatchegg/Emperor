@@ -6,11 +6,12 @@ public class Center : MonoBehaviour {
 
 	public List<Transform> Villagers;
 	private Vector2 _villageCenterPosition;
-	public Transform VillageChief;
 
-	public Transform VillageDepot;
-	public Transform VillageHouses;
-	public Transform VillageFarms;
+	public Transform VillageChief;
+	
+	public Transform VillagerPrefab;
+	public Transform VillageDepotPrefab;
+	public Transform VillageHousePrefab;
 
 	public float ResourceRadius = 20.0f;
 
@@ -36,27 +37,25 @@ public class Center : MonoBehaviour {
 
 		for (int i = 0; i < InitialPopulation; i++)
 		{
-			Transform villager = null;
-			villager = Instantiate(villager, _villageCenterPosition, Quaternion.identity);
-			Villagers.Add(villager);
+			Villagers.Add(Instantiate(VillagerPrefab, _villageCenterPosition, Quaternion.identity));
 		}
 	}
 
 	private void GenerateBuildings()
 	{
-		GenerateWarehouse();
+		GenerateVillageDepot();
 
-		GenerateHouses();
+		GenerateVillageHouses();
 	}
 
-	private void GenerateWarehouse()
+	private void GenerateVillageDepot()
 	{
-		//Instantiate()
+		Instantiate(VillageDepotPrefab, MathsHelpers.ConvertMapCoordintesToWorld(_villageCenterPosition), Quaternion.identity);
 	}
 
-	private void GenerateHouses()
+	private void GenerateVillageHouses()
 	{
-
+		Instantiate(VillageHousePrefab, MathsHelpers.ConvertMapCoordintesToWorld(_villageCenterPosition), Quaternion.identity);
 	}
 
 	private void ElectVillageChief()

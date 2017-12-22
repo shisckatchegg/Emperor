@@ -182,14 +182,8 @@ public class TileMap : MonoBehaviour
 		{
 			Vector2 rockPosition = MapData.GetResourceOfTypePositionByIndex(ResourcesTileType.Rock, resourceIndex);
 			Vector2 treePosition = MapData.GetResourceOfTypePositionByIndex(ResourcesTileType.Tree, resourceIndex);
-			Instantiate(RockPrefab, ConvertMapCoordintesToWorld( new Vector3(rockPosition.x, rockPosition.y, -5)), Quaternion.identity, GameObject.Find("Resources").transform);
-			Instantiate(TreePrefab, ConvertMapCoordintesToWorld(new Vector3(treePosition.x, treePosition.y, -5)), Quaternion.identity, GameObject.Find("Resources").transform);
+			Instantiate(RockPrefab, MathsHelpers.ConvertMapCoordintesToWorld( new Vector3(rockPosition.x, rockPosition.y, -5)), Quaternion.identity, GameObject.Find("Resources").transform);
+			Instantiate(TreePrefab, MathsHelpers.ConvertMapCoordintesToWorld(new Vector3(treePosition.x, treePosition.y, -5)), Quaternion.identity, GameObject.Find("Resources").transform);
 		}
-	}
-
-	private Vector3 ConvertMapCoordintesToWorld(Vector3 worldPosition)
-	{
-		float tileCenter = 0.5f;
-		return new Vector3(worldPosition.x + tileCenter, worldPosition.y + tileCenter, worldPosition.z);
 	}
 }
