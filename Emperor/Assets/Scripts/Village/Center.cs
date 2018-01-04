@@ -5,7 +5,6 @@ using UnityEngine;
 public class Center : MonoBehaviour {
 
 	public List<Transform> Villagers;
-	private Vector2 _villageCenterPosition;
 
 	public Transform VillageChief;
 	
@@ -37,7 +36,7 @@ public class Center : MonoBehaviour {
 
 		for (int i = 0; i < InitialPopulation; i++)
 		{
-			Villagers.Add(Instantiate(VillagerPrefab, _villageCenterPosition, Quaternion.identity));
+			Villagers.Add(Instantiate(VillagerPrefab, MathsHelpers.ConvertMapCoordintesToWorld(transform.position), Quaternion.identity));
 		}
 	}
 
@@ -50,12 +49,12 @@ public class Center : MonoBehaviour {
 
 	private void GenerateVillageDepot()
 	{
-		Instantiate(VillageDepotPrefab, MathsHelpers.ConvertMapCoordintesToWorld(_villageCenterPosition), Quaternion.identity);
+		Instantiate(VillageDepotPrefab, MathsHelpers.ConvertMapCoordintesToWorld(transform.position), Quaternion.identity);
 	}
 
 	private void GenerateVillageHouses()
 	{
-		Instantiate(VillageHousePrefab, MathsHelpers.ConvertMapCoordintesToWorld(_villageCenterPosition), Quaternion.identity);
+		Instantiate(VillageHousePrefab, MathsHelpers.ConvertMapCoordintesToWorld(transform.position), Quaternion.identity);
 	}
 
 	private void ElectVillageChief()

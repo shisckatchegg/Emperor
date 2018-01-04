@@ -20,7 +20,9 @@ public class ResourceCollection : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		CarriedResource = new Resource();
-		
+
+		CarriedResource.Type = ResourceType.Invalid;
+
 		StartedCollecting = false;
 
 		MaxCapacityReached = false;

@@ -18,14 +18,22 @@ public class ResourceDepot : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		ResourceCollection script = collision.gameObject.GetComponent<ResourceCollection>();
-		if (script != null)
+		if (collision != null)
 		{
-			Resource resource = script.CarriedResource;
-
-			StoredResources[(int)resource.Type] += resource.ResourceAmount;
-			resource.ResourceAmount = 0;
-			script.MaxCapacityReached = false;
+			ResourceCollection script = collision.gameObject.GetComponent<ResourceCollection>();
+			if (script != null)
+			{
+				Resource resource = script.CarriedResource;
+				if (resource != null)
+				{
+					if (resource.Type != ResourceType.Invalid)
+					{
+						StoredResources[(int)resource.Type] += resource.ResourceAmount;
+						resource.ResourceAmount = 0;
+						script.MaxCapacityReached = false;
+					}
+				}
+			}
 		}
 	}
 }

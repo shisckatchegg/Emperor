@@ -1,6 +1,7 @@
 ﻿
 public enum ResourceType
 {
+	Invalid = -1,
 	Stone = 0,
 	Wood,
 	Gold,
